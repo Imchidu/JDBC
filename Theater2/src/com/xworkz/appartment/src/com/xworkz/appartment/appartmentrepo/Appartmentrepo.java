@@ -11,5 +11,5 @@ public interface Appartmentrepo {
 	public List<AppartmentDto> read();
 	
 	public AppartmentDto findByName(String name);
-
+     
 }

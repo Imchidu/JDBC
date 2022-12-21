@@ -18,13 +18,14 @@ public class AppartmentServiceImpl implements AppartmentService {
 			if (Dto.getLocation().length() >= 2) {
 
 				System.out.println("Sending to repository");
-				repo.save(Dto);
+			repo.save(Dto);
 			} else {
 				System.out.println("not valid");
 			}
 		}
 
-		return true;
+		         return false ;
+
 
 	}
 
