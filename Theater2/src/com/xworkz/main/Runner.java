@@ -1,5 +1,7 @@
 package com.xworkz.main;
 
+import java.util.List;
+
 import com.xworkz.dto.Theaterdto;
 import com.xworkz.service.Theaterservice;
 import com.xworkz.service.TheaterserviceImpl;
@@ -57,7 +59,18 @@ public class Runner {
  
  theaterservice.validateAndSave(theater15);
 
-  
+ List<Theaterdto> read = theaterservice.read();
+ for (Theaterdto theaterdto : read) {
+	 System.out.println(theaterdto);
+}
+ 
+
+ Theaterdto findByName = theaterservice.findByName("rajkumar");
+ System.out.println(findByName);
+ for (Theaterdto theaterdto : read) {
+	 System.out.println(theaterdto);
+	
+}
   
   
  
