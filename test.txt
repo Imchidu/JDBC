@@ -1,0 +1,84 @@
+1 ABSTRACTION----
+      
+	   The process of hiding implimentation and showing the 
+	   functionality of an object using abstract class and interface 
+	   is called Abstraction.
+	   
+	   ex-ATM machine.
+	   
+	   Abstraction can be achieved in two ways--
+	   
+	   *By abstract class using abstract keyword.
+	   *By using interface.
+	   
+	   
+ ENCAPSULATION----
+ 
+       The process of wrapping or binding the sub code or data of object
+	   is called Encapsulation.
+	   
+	   ex-jav+
+	   
+	   +9
+	   a Bean,capsules.
+	   
+	   *private access modifier used during encapsulation.
+	   
+	   Access modifiers are-
+	   *public
+	   *private
+	   *protected
+	   *default
+	   
+	   
+2   Is-relationship---
+	     *Is-relationship is nothing but the inheriting the one class to another class.
+		 * Is-relationship is done in inheritance of oops concept.
+		 *In the Is-relationship process superclass properties inherits to subclass.
+		 
+	Has-A relationship----
+	    *whenever a instance of one class used in other class is called the 
+		HAS-A relationship. 
+
+
+
+3   *Java doesnot support multiple inheritance because,
+     It can lead to Diamond problem.
+	 
+	 
+8   We can create constants in java  by using  the 'ENUM '.
+    * In ENUM we store constants and we use them using ENUM.
+	
+	
+7   *equality operator (==)-- this  checks both object pointing same  memory locations.
+     
+	 *Equals()-- used to comparison between two objects.
+	 
+	 
+9   public = public access modifier which is used access any where
+    private = private access modifier cannot be accessed in another class and can be used same package.
+	protected=Protected access modifier also cannot accessed in another class and cannot be used in same pakage.
+	
+	
+	
+14  MARKER INTERFACE---
+    Marker interface is a interface that doesnot have any methods and constant in it.
+
+15  FINAL KEYWORD--
+    *This is the keyword used for variable,method and class,if we sure about to not change or update in future.  
+     
+	STATIC KEYWORD--
+	*It is a keyword used to declare the variables,methods.
+	*If we used static keyword we only use as one copy.
+	
+10  WRAPPER CLASSES---
+    *The wrapper classes in java are used for the methods that support objects like a conversion from other types.
+	*Wrapper classes are uesful in synchromization in multi threading.
+	
+12 HEAP MEMORY--
+   * Heap memory used by all the parts of application.
+   
+   STACK MEMORY--
+   *Stack memory used only by one thread excecution.
+
+	  
