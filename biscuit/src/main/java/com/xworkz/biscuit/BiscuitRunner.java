@@ -39,14 +39,14 @@ public class BiscuitRunner {
 //		createEntityManager.persist(dto8);
 //		createEntityManager.persist(dto9);
 //		
-System.out.println("read method================================================");
+		System.out.println("read method================================================");
 		BiscuitDTO find = createEntityManager.find(BiscuitDTO.class, 2);
 		System.out.println(find);
-System.out.println("updatemethod===========================================");
+		System.out.println("updatemethod===========================================");
 		BiscuitDTO find2 = createEntityManager.find(BiscuitDTO.class, 3);
 		find2.setColor("black");
 		createEntityManager.merge(find2);
-System.out.println("delete method=========================================");
+		System.out.println("delete method=========================================");
 		BiscuitDTO find3 = createEntityManager.find(BiscuitDTO.class, 10);
 
 		createEntityManager.remove(find3);
