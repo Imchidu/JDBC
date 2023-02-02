@@ -32,17 +32,17 @@ public class Runner {
 		
 //		Chocolate1DTO findByPriceAndName = service.findByPriceAndName(20, "milkybar");
 //		System.out.println(findByPriceAndName);
-		
+//		
 		
 //		boolean updateWeightByNameAndColor = service.updateWeightByNameAndColor("40gms", "munch", "black");
 //		System.out.println(updateWeightByNameAndColor);
 		
-		boolean updateNameByIdAndWeight = service.updateNameByIdAndWeight("cadbury", 1, "20gms");
-		System.out.println(updateNameByIdAndWeight);
+//		boolean updateNameByIdAndWeight = service.updateNameByIdAndWeight("cadburyyy", 1, "20gms");
+//		System.out.println(updateNameByIdAndWeight);
 		
 //		
-//		boolean deleteByColorAndName = service.deleteByColorAndName("brown", "kitkat");
-//		System.out.println(deleteByColorAndName);
+		boolean deleteByColorAndName = service.deleteByColorAndName("black", "munch");
+		System.out.println(deleteByColorAndName);
 //		
 	}
 	

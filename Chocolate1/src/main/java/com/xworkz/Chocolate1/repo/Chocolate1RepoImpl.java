@@ -55,7 +55,7 @@ public class Chocolate1RepoImpl implements Chocolate1Repo {
 		
 		if (entityManager != null) {
 			entityManager.getTransaction().begin();
-			Query createNamedQuery = entityManager.createNamedQuery("findByColorAndWeight");
+			Query createNamedQuery = entityManager.createNamedQuery("findByPriceAndName");
 			createNamedQuery.setParameter("pr", price);
 			createNamedQuery.setParameter("nm", name);
 			
