@@ -19,10 +19,7 @@ public class Server extends HttpServlet {
 		writer.print("<html><body>");
 		writer.print("<h1>this is servlet</h1>");
 		writer.print("</body></html>");
-		
-		
-		
-
+	
 	}
 
 }
