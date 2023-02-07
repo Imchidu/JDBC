@@ -20,7 +20,7 @@ public class ToyServlet extends HttpServlet{
 		writer.print("<html><body>");
 		writer.print("<form action='form' method='post'>");
 		writer.print("Name:<input type='text' name='name' >");
-		writer.print("Email: <input type='text' name='email'>");
+		writer.print("Email: <input type='email' name='email'>");
 		writer.print("<button type='submit' name='submit'>submit</button>");
 		writer.print("</body></html");
 		
