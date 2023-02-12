@@ -1,5 +1,7 @@
 package com.xworkz.school.service;
 
+import java.util.List;
+
 import com.xworkz.school.DTO.SchoolDTO;
 import com.xworkz.school.repo.SchoolRepo;
 import com.xworkz.school.repo.SchoolRepoImpl;
@@ -16,6 +18,12 @@ public class SchoolServiceImpl implements SchoolService {
 		}
 
 		return "data not saved";
+	}
+
+	@Override
+	public List<SchoolDTO> readAll() {
+
+		return repo.readAll();
 	}
 
 }

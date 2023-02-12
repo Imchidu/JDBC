@@ -1,9 +1,15 @@
+
+
+
+
 package com.xworkz.hospital;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.rmi.ServerException;
+import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +24,7 @@ public class HospitalServlet extends HttpServlet {
 
 	private HospitalService service = new HospitalServiceImpl();
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.print("<!DOCTYPE html>\r\n" + "<html>\r\n" + "\r\n" + "<head>\r\n" + "    <style>\r\n"
@@ -36,9 +42,14 @@ public class HospitalServlet extends HttpServlet {
 				+ "        <div><button type=\"submit\">CreateAccount</button></div>\r\n" + "\r\n" + "    </form>\r\n"
 				+ "</body>\r\n" + "\r\n" + "</html>");
 
+		request.getRequestDispatcher("/read").include(request, response);
+
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter writer = response.getWriter();
 
 		String name = request.getParameter("name");
 		String location = request.getParameter("location");
@@ -47,26 +58,29 @@ public class HospitalServlet extends HttpServlet {
 		String noOfBeds = request.getParameter("noOfBeds");
 		String noOfNurse = request.getParameter("noOfNurse");
 
-		HospitalDTO hospitalDTO = new HospitalDTO();
-		System.out.println(noOfPatient);
+		HospitalDTO hospitalDTO = new HospitalDTO(name, location, noOfPatient, noOfDoctors, noOfBeds, noOfNurse);
+		String status = service.validateAndsave(hospitalDTO);
+		writer.print(status);
+		writer.print(hospitalDTO);
+//		List<HospitalDTO> readall = service.readAll();
+//		System.out.println(readall);
 
-		hospitalDTO.setName(name);
-		hospitalDTO.setLocation(location);
-		hospitalDTO.setNoOfPatients(noOfPatient);
-		hospitalDTO.setNoOfDoctors(noOfDoctors);
-		hospitalDTO.setNoOfBeds(noOfBeds);
-		hospitalDTO.setNoOfNurse(noOfNurse);
+//		System.out.println(noOfPatient);
 
-		try {
-			service.validateAndsave(hospitalDTO);
-		} catch (Exception e) {
-			System.out.println("first step");
-			e.printStackTrace();
-		}
-
-		response.setContentType("text/html");
-		PrintWriter writer = response.getWriter();
-	
+//		hospitalDTO.setName(name);
+//		hospitalDTO.setLocation(location);
+//		hospitalDTO.setNoOfPatients(noOfPatient);
+//		hospitalDTO.setNoOfDoctors(noOfDoctors);
+//		hospitalDTO.setNoOfBeds(noOfBeds);
+//		hospitalDTO.setNoOfNurse(noOfNurse);
+//
+//		try {
+//			service.validateAndsave(hospitalDTO);
+//		} catch (Exception e) {
+//			System.out.println("first step");
+//			e.printStackTrace();
+//		}
+//
 
 	}
 

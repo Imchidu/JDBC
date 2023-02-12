@@ -3,7 +3,9 @@ package com.xworkz.school;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.rmi.ServerException;
+import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +20,7 @@ public class SchoolServlet extends HttpServlet {
 
 	SchoolService service = new SchoolServiceImpl();
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.print("<!DOCTYPE html>\r\n" + "<html>\r\n" + "\r\n" + "<head>\r\n" + "    <style>\r\n"
@@ -33,7 +35,10 @@ public class SchoolServlet extends HttpServlet {
 				+ "       \r\n" + "        <div><button type=\"submit\">ENTER</button></div>\r\n" + "\r\n"
 				+ "    </form>\r\n" + "</body>\r\n" + "\r\n" + "</html>\r\n" + "");
 
+		request.getRequestDispatcher("/read").include(request, response);
+		
 	}
+	
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException {
 		String name = request.getParameter("name");
@@ -45,10 +50,14 @@ public class SchoolServlet extends HttpServlet {
 		dto.setLocation(location);
 		dto.setNoOfStudents(noOfStudents);
 
-		service.save(dto);
+		String status = service.save(dto);
+		System.out.println(status);
 
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
+		
+		List<SchoolDTO> readall = service.readAll();
+		System.out.println(readall);
 
 	}
 

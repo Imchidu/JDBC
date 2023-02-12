@@ -4,10 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Hospital_info")
+@NamedQuery(name = "readAll" ,query = "select dto from HospitalDTO dto")
 public class HospitalDTO {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
